@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -32,7 +28,11 @@ namespace br
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hola desde Este de Estados Unidos!");
+                    await context.Response.WriteAsync(
+                        @"<html><head><title>Mi sitio web desde el Sur de Brasil</title><style>body { font-family: Arial, Helvetica, sans-serif; font-size: large; height: 100%; }</style></head>
+                        <body><h1>Hola desde el Este de los Estados Unidos!</h1></body>
+                        </html>"
+                    );
                 });
             });
         }
